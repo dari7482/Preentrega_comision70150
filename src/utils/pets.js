@@ -1,4 +1,4 @@
-const types = ['DOG', 'CAT', 'BIRD', 'Tourtle']
+const types = ['DOG', 'CAT']
 const dogBreeds = ['Labrador', 'Bulldog', 'Golden Retriever', 'Poodle', 'German Shepherd'];
 const catBreeds = ['Siamese', 'Persian', 'Bengal', 'Maine Coon', 'Sphynx'];
 
