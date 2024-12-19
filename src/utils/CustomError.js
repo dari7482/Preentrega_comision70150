@@ -1,6 +1,7 @@
 
 export const createCustomError = (name, message, cause, code) => {
-    let error = new Error(message, { cause })
+    let error = Error(message)
+    error.cause = cause
     error.name = name
     error.code = code
     error.custom = true
@@ -12,14 +13,3 @@ export const createCustomError = (name, message, cause, code) => {
 }
 
 
-/*export class CustomError{
-    static createError(name, message, cause, code){
-        let error=new Error(message, {cause})
-        error.name=name
-        error.code=code
-        error.custom=true
-
-        throw error       
-        // throw new Error("mensaje personalizado de error")
-    }
-}*/

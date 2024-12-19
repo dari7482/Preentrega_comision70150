@@ -7,8 +7,4 @@ export {
     types,
     dogBreeds,
     catBreeds
-
-
-
-
 }
