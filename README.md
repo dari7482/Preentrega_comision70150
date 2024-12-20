@@ -1,5 +1,5 @@
 **API Documentation**
-Endpoints
+--Endpoints
 Generate Data
 URL: http://localhost:8080/api/mocksData/generateData
 Method: GET
