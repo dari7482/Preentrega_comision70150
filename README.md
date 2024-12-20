@@ -1,4 +1,4 @@
-API Documentation
+**API Documentation**
 Endpoints
 Generate Data
 URL: http://localhost:8080/api/mocksData/generateData
