@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 
 export const conectaDB = async (uri, db) => {
+    console.log(db)
     try {
         await mongoose.connect(
             uri,

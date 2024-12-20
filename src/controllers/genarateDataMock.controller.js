@@ -1,6 +1,10 @@
 import { TIPOS_ERROR } from "../utils/EErrores.js"
 import { createCustomError } from "../utils/CustomError.js"
 import { userGenerator } from "../services/userGenerator.js"
+import { getUserPet } from "../services/getUser.js"
+import User from '../models/user.models.js'
+import Pet from '../models/pet.models.js'
+
 import { petGenerator } from "../services/petGenerator.js"
 
 
@@ -20,26 +24,40 @@ const createGenerateData = async (req, res) => {
             const user = await userGenerator();
             users.push(user);
         }
+        await User.insertMany(users)
 
 
     } catch (error) {
+
         res.status(500).json({ error: createCustomError("Error to generate user", "Error to generate user", "error", TIPOS_ERROR.NOT_FOUND) });
+
     }
 
     const pets = []
     try {
         for (let i = 0; i <= pet; i++) {
-            pets.push(petGenerator())
+            const pet = await petGenerator()
+
+            pets.push(pet)
+            console.log(pet)
 
         }
-    } catch {
-        res.status(500).json({ error: createCustomError("Error to generate user", "Error to generate user", "error", TIPOS_ERROR.NOT_FOUND) });
+        await Pet.insertMany(pets)
 
+    } catch (error) {
+        res.status(500).json({ error: createCustomError("Error to generate Pet", "Error to generate pet", "error", TIPOS_ERROR.NOT_FOUND) });
     }
+
+    const petSaved = await getUserPet(Pet.find())
+    const userSaved = await getUserPet(User.find())
+
+    console.log(petSaved)
+
+    console.log(userSaved)
 
     res.status(200).json({ users, pets });
 
-    res.send('ok')
+
 }
 
 

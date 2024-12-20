@@ -67,5 +67,11 @@ app.use((req, res, next) => {
 });
 
 app.use(errorHandler)
-conectaDB(MONGO_URL, "test")
+conectaDB(MONGO_URL, "back3")
+/*app.use(session({
+    secret: 'secretkey',
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: MONGO_URL })
+}))*/
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
