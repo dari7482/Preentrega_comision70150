@@ -2,8 +2,8 @@ import { TIPOS_ERROR } from "../utils/EErrores.js"
 import { createCustomError } from "../utils/CustomError.js"
 import { userGenerator } from "../services/userGenerator.js"
 import { getUserPet } from "../services/getUser.js"
-import User from '../models/user.models.js'
-import Pet from '../models/pet.models.js'
+import User from '../dao/mongo/models/user.models.js'
+import Pet from '../dao/mongo/models/pet.models.js'
 
 import { petGenerator } from "../services/petGenerator.js"
 

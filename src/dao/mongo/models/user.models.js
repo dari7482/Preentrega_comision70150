@@ -8,6 +8,7 @@ const userSchema = new Schema({
     password: { type: String, required: true },
     role: { type: String, enum: ['admin', 'user'], required: true },
     pets: [{ type: Schema.Types.ObjectId, ref: 'Pet' }],
+    username: { type: String, required: true },
 }, { timestamps: true });
 
 
